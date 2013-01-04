@@ -1,27 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:ui="http://java.sun.com/jsf/facelets" 
-      xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   template="/WEB-INF/templates/default.xhtml">
 
-
-	<h:head>
-		<title>This is a new page test!!</title>
-	</h:head>
-	
-	<h:body>
-		Add new Bill:
-		<h:outputLabel for="name" value="Name:"/>
-		<h:inputText value="#{newBill.name}" />
-		
-		<h:outputLabel for="date" value="Date:"/>
-		<h:inputText value="#{newBill.date}"/>
-		
-		<h:outputLabel for="amount" value="amount"/>
-		<h:inputText value="#{newBill.amount}"/>
-		
-		<h:commandButton id="addBill" action="#{billController.addBill}" value="Add Bill" />
-	</h:body>
-
+	<ui:define name="content">
+	  <h:form>	
+			Add new Bill:
+			<h:outputLabel for="name" value="Name:"/>
+			<h:inputText id="name" value="#{newBill.name}" />
+			
+			<h:outputLabel for="date" value="Date:"/>
+			<h:inputText id="date" value="#{newBill.date}">
+				<f:convertDateTime pattern="dd.MM.yyyy"/>
+			</h:inputText>
+			
+			<h:outputLabel for="amount" value="amount"/>
+			<h:inputText id="amount" value="#{newBill.amount}"/>
+			
+			<h:commandButton id="addBill" action="#{billController.addBill}" value="Add Invoice"/>
+			<h:commandButton id="listInvoices" action="bill-list" value="List Invoices"/>
+	  </h:form>
+	</ui:define>
    
-</html>
+</ui:composition>
