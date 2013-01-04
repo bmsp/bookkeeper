@@ -3,21 +3,29 @@ package at.bmsp.bookkeeper.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 
+import at.bmsp.bookkeeper.Bill;
+
+@Stateless
 public class BillCollectorBean {
-	List<String> bills = new ArrayList<String>();
+	List<Bill> bills;
 
 	public BillCollectorBean() {
-		// TODO Auto-generated constructor stub
 	}
 	
-	public void addBill(String bill) {
+	public void addBill(Bill bill) {
 		bills.add(bill);
 	}
 	
-	public List<String> getBills() {
+	public List<Bill> getBills() {
 		return bills;
+	}
+	
+	@PostConstruct
+	public void initBills() {
+		bills = new ArrayList<Bill>();
 	}
 
 

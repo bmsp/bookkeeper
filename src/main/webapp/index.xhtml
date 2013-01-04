@@ -10,7 +10,17 @@
 	</h:head>
 	
 	<h:body>
-		Test Test Text!
+		Add new Bill:
+		<h:outputLabel for="name" value="Name:"/>
+		<h:inputText value="#{newBill.name}" />
+		
+		<h:outputLabel for="date" value="Date:"/>
+		<h:inputText value="#{newBill.date}"/>
+		
+		<h:outputLabel for="amount" value="amount"/>
+		<h:inputText value="#{newBill.amount}"/>
+		
+		<h:commandButton id="addBill" action="#{billController.addBill}" value="Add Bill" />
 	</h:body>
 
    
