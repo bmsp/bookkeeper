@@ -9,26 +9,26 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Named;
 
-import at.bmsp.bookkeeper.Bill;
+import at.bmsp.bookkeeper.Invoice;
 
 @ManagedBean
 @RequestScoped
-public class BillListProducer {
+public class InvoiceListProducer {
 
 	@EJB
-	private BillCollectorBean billBean;
+	private InvoiceCollectorBean invoiceBean;
 
-	private List<Bill> bills;
+	private List<Invoice> invoices;
 
 	@Produces
 	@Named
-	public List<Bill> getBills() {
-		return bills;
+	public List<Invoice> getInvoices() {
+		return invoices;
 	}
 
 	@PostConstruct
-	public void initBills() {
-		bills = billBean.getBills();
+	public void initInvoices() {
+		invoices = invoiceBean.getInvoices();
 	}
 
 }

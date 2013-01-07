@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Bill {
+public class Invoice {
 	
 	@Id
 	private long id;

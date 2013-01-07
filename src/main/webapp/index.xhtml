@@ -7,20 +7,20 @@
 
 	<ui:define name="content">
 	  <h:form>	
-			Add new Bill:
+			Add new invoice:
 			<h:outputLabel for="name" value="Name:"/>
-			<h:inputText id="name" value="#{newBill.name}" />
+			<h:inputText id="name" value="#{newInvoice.name}" />
 			
 			<h:outputLabel for="date" value="Date:"/>
-			<h:inputText id="date" value="#{newBill.date}">
+			<h:inputText id="date" value="#{newInvoice.date}">
 				<f:convertDateTime pattern="dd.MM.yyyy"/>
 			</h:inputText>
 			
 			<h:outputLabel for="amount" value="amount"/>
-			<h:inputText id="amount" value="#{newBill.amount}"/>
+			<h:inputText id="amount" value="#{newInvoice.amount}"/>
 			
-			<h:commandButton id="addBill" action="#{billController.addBill}" value="Add Invoice"/>
-			<h:commandButton id="listInvoices" action="bill-list" value="List Invoices"/>
+			<h:commandButton id="addInvoice" action="#{invoiceController.addInvoice}" value="Add Invoice"/>
+			<h:commandButton id="listInvoices" action="invoice-list" value="List Invoices"/>
 	  </h:form>
 	</ui:define>
    

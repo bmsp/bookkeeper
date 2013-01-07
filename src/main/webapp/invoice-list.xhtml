@@ -8,10 +8,10 @@
 	<ui:define name="content">
 		<h:form>
 			<h2>List of Invoices</h2>
-  		<h:panelGroup rendered="#{empty bills}">
+  		<h:panelGroup rendered="#{empty invoices}">
      		<em>No invoices available.</em>
   		</h:panelGroup>
-  		<h:dataTable var="_invoice" value="#{bills}" rendered="#{not empty bills}">
+  		<h:dataTable var="_invoice" value="#{invoices}" rendered="#{not empty invoices}">
 <!--        <h:column>
           <f:facet name="header">Id</f:facet>
               #{_invoice.id}
