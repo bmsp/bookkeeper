@@ -5,28 +5,29 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
+import javax.faces.bean.ManagedBean;
 
 import at.bmsp.bookkeeper.Bill;
 
+@ManagedBean
 @Stateless
 public class BillCollectorBean {
 	List<Bill> bills;
 
 	public BillCollectorBean() {
 	}
-	
+
 	public void addBill(Bill bill) {
 		bills.add(bill);
 	}
-	
+
 	public List<Bill> getBills() {
 		return bills;
 	}
-	
+
 	@PostConstruct
 	public void initBills() {
 		bills = new ArrayList<Bill>();
 	}
-
 
 }

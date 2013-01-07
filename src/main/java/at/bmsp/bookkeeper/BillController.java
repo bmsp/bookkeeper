@@ -3,10 +3,9 @@ package at.bmsp.bookkeeper;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.jboss.logging.Logger;
@@ -15,7 +14,7 @@ import at.bmsp.bookkeeper.persistence.BillCollectorBean;
 
 @Model
 public class BillController {
-	@Inject
+	@EJB
 	private BillCollectorBean billBean;
 	private Bill newBill;
 	private Logger logger = Logger.getLogger(BillController.class);
