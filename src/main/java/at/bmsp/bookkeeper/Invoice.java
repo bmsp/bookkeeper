@@ -5,6 +5,13 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * Testkomment 
+ * 
+ * @author Simon
+ *
+ */
+
 @Entity
 public class Invoice {
 	
